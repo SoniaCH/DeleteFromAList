@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DeleteFromAList"
+             x:Class="DeleteFromAList.MainPage">
+    <StackLayout>
+        <Label x:Name="lbl1" Text="Items" VerticalOptions="StartAndExpand" HorizontalOptions="Center"></Label>
+        <ListView x:Name="lstItems" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding ItemName}" HorizontalOptions="StartAndExpand" FontSize="30"></Label>
+                                <Button Text="Delete" CommandParameter="{Binding ItemName}" Clicked="DeleteClicked">
+                                </Button>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
